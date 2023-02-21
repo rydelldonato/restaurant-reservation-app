@@ -14,7 +14,7 @@ function Table({table, loadDashboard}){
             <td>{table.table_name}</td>
             <td>{table.capacity}</td>
             <td data-table-id-status={table.table_id}>{table.reservation_id ? "Occupied" : "Free"}</td>
-            <td><button data-table-id-finish={table.table_id} onClick={handleClick}>Finish</button></td>
+            {table.reservation_id ? <td><button data-table-id-finish={table.table_id} onClick={handleClick}>Finish</button></td> : null}
         </tr>
     )
 }
